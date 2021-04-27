@@ -1,0 +1,828 @@
+/*全体共通
+最初から設定してあるので特に変更
+しなくても大丈夫です♪
+-----------------*/
+/*　パディングをサイズ内側にする処理　*/
+
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/*ーーーーーーーーーーー*/
+/*この下から記述*/
+/*ーーーーーーーーーーー*/
+
+html {
+  scroll-behavior: smooth;
+}
+// カラー設定
+$color_main: #fff100;
+$color_sub: #cccccc;
+
+$color_line: #fff100;
+$color_black: #111111;
+$color_gray: #cccccc;
+$color_white: #ffffff;
+$color_white_deep: #e0e0e0;
+
+$color_label_like: #403d00;
+$color_label_required: #ff1943;
+$color_checked: #ff1943;
+$color_error: #ff1943;
+
+// size
+$size_0: 0;
+$size_half: 4px;
+$size_1: 8px;
+$size_2: 16px;
+$size_3: 24px;
+$size_4: 32px;
+$size_5: 48px;
+$size_6: 64px;
+$size_7: 96px;
+$size_8: 128px;
+$size_9: 192px;
+$size_10: 256px;
+
+$size_max: 960px;
+$size_10: 256px;
+$size_10: 256px;
+
+// フォント、文字サイズ
+
+body {
+  font-family: fot-tsukuardgothic-std, sans-serif;
+  line-height: 1.75;
+  font-size: $size_2;
+  background: $color_main;
+  color: $color_black;
+}
+
+input,
+select,
+textarea,
+button {
+  font-size: 100%;
+  font-family: inherit;
+}
+
+//ボタンの設定
+// リセット
+button {
+  background: none;
+  border: none;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+button {
+  margin: 0;
+  padding: $size_2 $size_5;
+  font-size: $size_2;
+  font-family: fot-tsukuardgothic-std, sans-serif;
+  background-color: $color_white;
+  color: $color_black;
+  cursor: pointer;
+  border-radius: 10px;
+  border: 0;
+  transition: 0.3s;
+  &:hover {
+    background-color: $color_white_deep;
+  }
+}
+
+h2 {
+  font-size: $size_4;
+  margin: $size_4;
+}
+
+h3 {
+  font-size: $size_3;
+  text-decoration: underline wavy $color_line;
+  text-underline-offset: $size_1;
+}
+
+.maincontent .mainimg {
+  width: $size_5;
+  height: $size_5;
+}
+
+/* トップページの装飾 */
+
+header {
+  display: grid;
+  place-items: center;
+  position: relative;
+  background: $color_white;
+  height: $size_10;
+  margin-bottom: 17px;
+}
+
+.header_text {
+  display: grid;
+  place-items: center;
+}
+
+header::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 50px;
+  background-image: url(../img/circle01.svg);
+  bottom: -25px;
+  position: absolute;
+
+  /* 画像を切り取ったり縦横比を崩したりすることなく、画像ができるだけ大きくなるよう拡大縮小 */
+  background-size: contain;
+}
+
+/* navの装飾 */
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: $size_7;
+  img {
+    width: 30%;
+  }
+}
+
+.nav_text {
+  display: flex;
+}
+
+.nav1:hover,
+.nav2:hover,
+.nav3:hover,
+.nav4:hover,
+.nav5:hover {
+  box-shadow: 0 3px 6px 0 $color_black;
+  transform: translateY(-0.1875em);
+}
+
+.nav li {
+  width: $size_8;
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+  margin-right: 2px;
+  list-style: none;
+  border-radius: 10px;
+
+  a {
+    text-decoration: none;
+    color: $color_black;
+    font-weight: bold;
+    padding: $size_2;
+    text-decoration: none;
+  }
+}
+
+/* あばうと */
+
+.about {
+  position: relative;
+  margin-bottom: 17px;
+  position: relative;
+}
+
+.about::after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 50px;
+  background-image: url(../img/circle01.svg);
+  bottom: -40px;
+
+  background-size: contain;
+}
+
+.about_main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.about_text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#about_text_7 {
+  margin-bottom: $size_6;
+}
+// コース
+
+.course_main {
+  display: grid;
+  place-items: center;
+}
+
+#course {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: $color_white;
+}
+
+#course::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 50px;
+  background-image: url(../img/circle03.svg);
+  bottom: -25px;
+  position: absolute;
+  background-size: contain;
+}
+
+.course_main {
+  margin: $size_8;
+}
+
+.corse_detail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  img {
+    width: $size_9;
+    height: $size_9;
+    margin-right: $size_9;
+  }
+}
+
+.course_block {
+  display: flex;
+  margin: $size_7 0px 0px 0px;
+}
+
+#course_1 {
+  margin: 0px;
+}
+
+.course_img {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  width: 50%;
+}
+
+.course_1_text,
+.course_2_text,
+.course_3_text {
+  width: 50%;
+  max-width: 480px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.course_1_text p,
+.course_2_text p,
+.course_3_text p {
+  margin: 40px 48px 0px 48px;
+}
+
+.course_1_text h3,
+.course_2_text h3,
+.course_3_text h3 {
+  margin-left: 48px;
+}
+
+/* ニュース */
+.news {
+  position: relative;
+}
+
+.news_main {
+  margin: 64px 0px 64px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.news_content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.news_lbox {
+  display: flex;
+  max-width: $size_max;
+  justify-content: space-between;
+  align-items: flex-start;
+  img {
+    width: $size_8;
+    height: $size_8;
+  }
+}
+
+.news_sbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 25%;
+  h3 {
+    margin: $size_4;
+  }
+}
+
+.news_sbox_text,
+.news_sbox_img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: $size_3;
+}
+
+.news_sbox_img:hover {
+  filter: drop-shadow(2px 2px 15px $color_gray);
+}
+
+.news_movie {
+  margin: $size_8;
+}
+
+.news_movie,
+.morebtn {
+  margin: 56px 0px 48px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// アクセス
+.access {
+  position: relative;
+  background-color: $color_sub;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.access::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 50px;
+  background-image: url(../img/circle02.svg);
+  background-size: contain;
+  position: absolute;
+  top: -25px;
+}
+
+.access_main {
+  margin: 64px;
+  display: grid;
+  place-items: center;
+}
+
+.access_map {
+  position: relative;
+  width: 50%;
+
+  &:before {
+    content: "";
+    display: block;
+    padding-top: 56.25%;
+  }
+}
+
+#content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* 会社概要 */
+
+.contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.access_content {
+  table {
+    border: 1px solid #ccc;
+    border-collapse: separate;
+    border-radius: 5px;
+    border-spacing: 0;
+    width: 100%;
+    margin: 64px 0px 80px 0px;
+    text-align: center;
+    th,
+    td {
+      border-bottom: 1px solid #ccc;
+      padding: 10px 20px;
+      background: $color_white;
+    }
+
+    tr {
+      &:first-child {
+        th {
+          border-radius: 5px 0 0 0;
+        }
+        td {
+          border-radius: 0 5px 0 0;
+        }
+      }
+      &:last-child {
+        th {
+          border-bottom: none;
+          border-radius: 0 0 0 5px;
+        }
+        td {
+          border-bottom: none;
+          border-radius: 0 0 5px 0;
+        }
+      }
+    }
+  }
+}
+
+caption {
+  border-collapse: separate;
+  border-radius: 5px;
+  color: $color_black; /* 文字色 */
+  font-weight: bold; /* 太字に */
+  margin: $size_4;
+}
+
+/* お問い合わせ */
+
+.contact {
+  padding: 80px 0;
+  position: relative;
+  background-color: $color_white;
+}
+
+.contact:before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 50px;
+  background-image: url(../img/circle01.svg);
+  background-size: contain;
+  position: absolute;
+  top: -25px;
+}
+
+.contact::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 50px;
+  background-image: url(../img/circle01.svg);
+  bottom: -25px;
+  position: absolute;
+
+  /* 画像を切り取ったり縦横比を崩したりすることなく、画像ができるだけ大きくなるよう拡大縮小 */
+  background-size: contain;
+}
+
+.contact-ttl {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.contact-body {
+  padding: 12px 0px 12px 120px;
+}
+
+.contact-item {
+  text-align: left;
+  padding-left: 20px;
+}
+
+.form-text,
+.form-select {
+  width: 328px;
+  height: 36px;
+  padding: 0px $size_1;
+  border-radius: 5px;
+  border: 1px solid $color_gray;
+}
+
+.contact-sex + .contact-sex {
+  margin-left: 20px;
+}
+
+.contact-sex-txt {
+  display: inline-block;
+  margin-left: 5px;
+}
+
+.contact-skill {
+  display: block;
+
+  + .contact-skill {
+    margin-top: 24px;
+  }
+}
+
+.form-textarea {
+  width: 328px;
+  height: 108px;
+  padding: $size_1;
+  height: 200px;
+  border-radius: 5px;
+  border: 1px solid $color_gray;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.Form-Item-Label-Required {
+  border-radius: 6px;
+  margin-right: $size_2;
+  padding: 1px 17px;
+  width: 70px;
+  display: inline-block;
+  text-align: center;
+  background: $color_label_required;
+  color: $color_white;
+  font-size: 14px;
+}
+
+.Form-Item-Label-like {
+  border-radius: 6px;
+  margin-right: $size_2;
+  padding: 1px 17px;
+  width: 70px;
+  display: inline-block;
+  text-align: center;
+  background: $color_label_like;
+  color: $color_white;
+  font-size: 14px;
+}
+
+// ラジオボタン
+
+.my-radio {
+  position: relative;
+  padding-left: 28px;
+  cursor: pointer;
+  user-select: none;
+  margin-left: $size_2;
+  /* inputは非表示にする */
+  input {
+    display: none;
+  }
+}
+
+/* 常に表示する円 */
+.radio-mark {
+  position: absolute;
+  top: 0; /* 上からの位置 */
+  left: 0;
+  height: 22px; /* 幅 */
+  width: 22px; /* 幅 */
+  border: solid 2px #d4dae2; /* 線 */
+  border-radius: 50%;
+  box-sizing: border-box;
+  /* 選択時に重ねる円 */
+  &:after {
+    content: "";
+    position: absolute;
+    background: $color_checked; /* 色 */
+    border-radius: 50%;
+    top: 2px;
+    bottom: 2px;
+    left: 2px;
+    right: 2px;
+    opacity: 0; /* 透明にしておく */
+  }
+}
+
+/* 選択されたとき */
+.my-radio {
+  /* 上の円 */
+  input:checked + .radio-mark:after {
+    opacity: 1; /* 透明を解除 */
+  }
+}
+
+.my-radio_first {
+  margin-left: 0px;
+}
+
+/*チェックボックスかざり  */
+
+.contact-skill {
+  display: block;
+  position: relative;
+  margin: 1em 0;
+  padding-left: 28px;
+  cursor: pointer;
+  user-select: none;
+  /* テキストの選択を防ぐ */
+  input {
+    display: none;
+  }
+}
+.contact-skill-txt {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 24px;
+  width: 24px;
+  border: solid 2px #d4dae2;
+  border-radius: 4px;
+  box-sizing: border-box;
+
+  &:after {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 1px;
+    width: 6px;
+    height: $size_1;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    opacity: 0;
+
+    /* 透明にしておく */
+    margin-right: 40px;
+  }
+}
+
+.contact-skill input:checked + .contact-skill-txt {
+  background: $color_checked;
+
+  &:after {
+    opacity: 1;
+  }
+}
+
+.contact-skill-txt-txt {
+  margin-left: 40px;
+}
+
+// エラー表示
+// input エラー表示
+
+.contact_format input:invalid {
+  border: solid 1px $color_error;
+}
+
+/* 送信ボタン */
+
+.contact_format button {
+  background-color: $color_main;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 100px;
+}
+.form_btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 100px;
+}
+
+/* スライダー */
+
+/* 1.親スタイルリセットとペース設定 ++++++++++ */
+.slider-box {
+  margin: $size_10;
+  max-height: $size_max;
+  max-height: $size_max;
+}
+
+.slider-box div {
+  box-sizing: border-box;
+  margin: $size_2;
+}
+
+.loop-box {
+  ul,
+  li {
+    box-sizing: border-box;
+    margin: $size_2;
+  }
+}
+
+/* 2.ベースBOX */
+
+.slider-box {
+  box-sizing: border-box;
+  width: 80%;
+  display: grid;
+  place-items: center;
+  margin: 0 auto;
+  padding: $size_1;
+}
+
+/* 4.スライダー本体とアニメーション*/
+
+.loop-box {
+  position: relative;
+  width: 100%;
+
+  height: 320px;
+
+  ul {
+    height: 320px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    max-width: 10000%;
+    min-width: 100%;
+    width: calc(320px * 3);
+    animation: 30s linear infinite;
+  }
+
+  li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $color_white;
+    width: calc(100% / 3);
+  }
+
+  img {
+    height: auto;
+    width: 100%;
+  }
+
+  ul {
+    &.loop1 {
+      animation-name: loop1;
+    }
+
+    &.loop2 {
+      animation-name: loop2;
+    }
+  }
+}
+
+/* 5.アニメーション個別 */
+
+@keyframes loop1 {
+  0% {
+    transform: translateX(0);
+  }
+
+  49.99999% {
+    transform: translateX(-100%);
+  }
+
+  50% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes loop2 {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+// フッター
+.footer {
+  width: 100%;
+  height: 120px;
+  text-align: center;
+  margin: $size_8;
+}
+
+.footer-text {
+  color: $color_black;
+  display: grid;
+  place-items: center;
+}
