@@ -3,7 +3,6 @@
 しなくても大丈夫です♪
 -----------------*/
 /*　パディングをサイズ内側にする処理　*/
-
 * {
   padding: 0;
   margin: 0;
@@ -18,9 +17,11 @@
 /*この下から記述*/
 /*ーーーーーーーーーーー*/
 
+// スムーススクロール？なってる感ない
 html {
   scroll-behavior: smooth;
 }
+
 // カラー設定
 $color_main: #fff100;
 $color_sub: #cccccc;
@@ -83,19 +84,44 @@ button {
   appearance: none;
 }
 
-button {
-  margin: 0;
-  padding: $size_2 $size_5;
-  font-size: $size_2;
-  font-family: fot-tsukuardgothic-std, sans-serif;
+// 共通設定
+
+.button {
+  padding: 12px 24px;
+  margin: $size_6;
+  border-radius: 6px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease,
+    background-color 0.25s ease;
+}
+
+.button:hover {
+  transform: translate3d(0px, -1px, 0px);
+}
+
+// もっとみるボタン
+#morebtn {
   background-color: $color_white;
   color: $color_black;
-  cursor: pointer;
-  border-radius: 10px;
-  border: 0;
-  transition: 0.3s;
+  box-shadow: 0 4px 6px $color_sub, 0 1px 3px $color_sub;
   &:hover {
-    background-color: $color_white_deep;
+    transform: translate3d(0px, -1px, 0px);
+    background-color: $color_white;
+    box-shadow: 0 7px 14px $color_gray, 0 3px 6px $color_black;
+  }
+}
+
+// 送信ボタン
+#formbtn {
+  background-color: $color_main;
+  color: $color_black;
+  box-shadow: 0 4px 6px $color_sub, 0 1px 3px $color_sub;
+  margin: auto;
+  margin-top: $size_4;
+
+  &:hover {
+    transform: translate3d(0px, -1px, 0px);
+    background-color: $color_main;
+    box-shadow: 0 7px 14px $color_gray, 0 3px 6px $color_black;
   }
 }
 
@@ -110,10 +136,14 @@ h3 {
   text-underline-offset: $size_1;
 }
 
+// h3の下のアイコン
 .maincontent .mainimg {
   width: $size_5;
   height: $size_5;
+  margin-bottom: $size_3;
 }
+
+// セクションごとの余白
 
 /* トップページの装飾 */
 
@@ -218,11 +248,18 @@ header::after {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding-bottom: $size_6;
+  margin: $size_2;
+  p {
+    padding: $size_1;
+  }
 }
-#about_text_7 {
-  margin-bottom: $size_6;
-}
+
 // コース
+
+.course {
+  padding: $size_4 0;
+}
 
 .course_main {
   display: grid;
@@ -249,10 +286,6 @@ header::after {
   background-size: contain;
 }
 
-.course_main {
-  margin: $size_8;
-}
-
 .corse_detail {
   display: flex;
   justify-content: center;
@@ -271,7 +304,11 @@ header::after {
 }
 
 #course_1 {
-  margin: 0px;
+  margin-top: $size_7;
+}
+
+#course_block_last {
+  margin: $size_7;
 }
 
 .course_img {
@@ -307,14 +344,19 @@ header::after {
 /* ニュース */
 .news {
   position: relative;
-}
-
-.news_main {
-  margin: 64px 0px 64px 0px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding-bottom: $size_6;
+}
+
+.news_main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: $size_4;
 }
 
 .news_content {
@@ -328,6 +370,7 @@ header::after {
   max-width: $size_max;
   justify-content: space-between;
   align-items: flex-start;
+  margin-top: $size_6;
   img {
     width: $size_8;
     height: $size_8;
@@ -392,7 +435,7 @@ header::after {
 }
 
 .access_main {
-  margin: 64px;
+  margin: $size_4;
   display: grid;
   place-items: center;
 }
@@ -423,6 +466,44 @@ header::after {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  position: relative;
+  background-color: $color_white;
+  padding: $size_4 0 0 0;
+  &::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 50px;
+    background-image: url(../img/circle01.svg);
+    background-size: contain;
+    position: absolute;
+    top: -25px;
+  }
+  &::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 50px;
+    background-image: url(../img/circle01.svg);
+    bottom: -25px;
+    position: absolute;
+    background-size: contain;
+  }
+}
+
+.maincontent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.contact_format {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: $size_5;
 }
 
 .access_content {
@@ -432,7 +513,7 @@ header::after {
     border-radius: 5px;
     border-spacing: 0;
     width: 100%;
-    margin: 64px 0px 80px 0px;
+    margin: $size_3 0px 80px 0px;
     text-align: center;
     th,
     td {
@@ -440,7 +521,6 @@ header::after {
       padding: 10px 20px;
       background: $color_white;
     }
-
     tr {
       &:first-child {
         th {
@@ -469,40 +549,11 @@ caption {
   border-radius: 5px;
   color: $color_black; /* 文字色 */
   font-weight: bold; /* 太字に */
-  margin: $size_4;
+  font-size: $size_3;
+  margin: $size_3;
 }
 
 /* お問い合わせ */
-
-.contact {
-  padding: 80px 0;
-  position: relative;
-  background-color: $color_white;
-}
-
-.contact:before {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 50px;
-  background-image: url(../img/circle01.svg);
-  background-size: contain;
-  position: absolute;
-  top: -25px;
-}
-
-.contact::after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 50px;
-  background-image: url(../img/circle01.svg);
-  bottom: -25px;
-  position: absolute;
-
-  /* 画像を切り取ったり縦横比を崩したりすることなく、画像ができるだけ大きくなるよう拡大縮小 */
-  background-size: contain;
-}
 
 .contact-ttl {
   font-size: 40px;
@@ -586,6 +637,7 @@ caption {
 
 .my-radio {
   position: relative;
+
   padding-left: 28px;
   cursor: pointer;
   user-select: none;
@@ -595,11 +647,10 @@ caption {
     display: none;
   }
 }
-
 /* 常に表示する円 */
 .radio-mark {
   position: absolute;
-  top: 0; /* 上からの位置 */
+  top: 1.8px; /* 上からの位置 */
   left: 0;
   height: 22px; /* 幅 */
   width: 22px; /* 幅 */
@@ -627,7 +678,6 @@ caption {
     opacity: 1; /* 透明を解除 */
   }
 }
-
 .my-radio_first {
   margin-left: 0px;
 }
@@ -650,8 +700,8 @@ caption {
   position: absolute;
   top: 0;
   left: 0;
-  height: 24px;
-  width: 24px;
+  height: $size_3;
+  width: $size_3;
   border: solid 2px #d4dae2;
   border-radius: 4px;
   box-sizing: border-box;
@@ -682,7 +732,9 @@ caption {
 }
 
 .contact-skill-txt-txt {
-  margin-left: 40px;
+  margin-left: $size_3;
+  position: relative;
+  top: -5px;
 }
 
 // エラー表示
@@ -693,20 +745,6 @@ caption {
 }
 
 /* 送信ボタン */
-
-.contact_format button {
-  background-color: $color_main;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 100px;
-}
-.form_btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 100px;
-}
 
 /* スライダー */
 
@@ -815,14 +853,16 @@ caption {
 
 // フッター
 .footer {
-  width: 100%;
-  height: 120px;
-  text-align: center;
-  margin: $size_8;
+  margin: $size_7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .footer-text {
   color: $color_black;
   display: grid;
   place-items: center;
+  margin-top: $size_6;
 }

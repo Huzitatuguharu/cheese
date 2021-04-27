@@ -74,11 +74,12 @@
   <div class="about_main maincontent" id="about_main">
       <h2 id="about_title" >わたしたち</h2>
       <img   class="mainimg" src="img/about_main.svg" alt="シェフ">
+       <p id="about_text_1">チーズアカデミーについて</p>
   </div>
 
   <div class="about_text" id="about_text">
 
-      <p id="about_text_1">チーズアカデミーについて</p>
+
       <p id="about_text_2">チーズアカデミーはチーズ職人養成学校です</p>
       <p id="about_text_3">チーズの素晴らしさを，自給自足を通じて，できるだけ多くの人に知っていただきたい</p>
       <p id="about_text_4">そして，食卓にはいつもチーズがあった，あの頃の当たり前をこの手で取り戻したい</p>
@@ -88,23 +89,15 @@
   </div>
 </section>
 
-
-
-
-
   <div class="course" id="course" >
     <div  class="course_main maincontent">
       <h2>学校案内</h2>
       <img class="mainimg" src="img/course_main.svg" alt="シェフ">
       <p>未経験からでもスタートができるよう，</p>
       <p>カリキュラム
-
         は<strong>多くの専門家</strong>や<strong>現役チーズ職人のアドバイス</strong>のもと</p>
         <p>作られました
     </div>
-
-
-
     <div class="corse_detail">
 
       <div class="course_block" id=course_1>
@@ -126,7 +119,7 @@
         </div>
       </div>
 
-      <div class="course_block">
+      <div class="course_block" id="course_block_last">
         <div class="course_img"><img src="img/course_03.svg." alt="卒業制作のティスティング"></div>
         <div class="course_3_text">
           <h3>卒業制作はティスティング審査あり</h3>
@@ -154,7 +147,7 @@
         <div class="news_sbox">
           <h3>痛風</h3>
           <div class="news_sbox_img">
-              <a href="https://www.youtube.com/watch?v=kkXgr5jb5xM"><img src="img/beer.svg" alt="痛風"></a>
+              <a href="https://www.youtube.com/watch?v=kkXgr5jb5xM" target="_blank"><img src="img/beer.svg" alt="痛風"></a>
           </div>
 
           <div class="news_sbox_text">
@@ -166,7 +159,7 @@
         <div class="news_sbox">
           <h3>UberEats</h3>
           <div class="news_sbox_img">
-            <a href="https://www.youtube.com/watch?v=IaFKWHQqXZ0"><img src="img/uber.svg" alt="UberEats"></a>
+            <a href="https://www.youtube.com/watch?v=IaFKWHQqXZ0" target="_blank"><img src="img/uber.svg" alt="UberEats"></a>
           </div>
 
           <div class="news_sbox_text">
@@ -179,7 +172,7 @@
         <div class="news_sbox">
           <h3>スタバ</h3>
           <div class="news_sbox_img">
-            <a href="https://www.youtube.com/watch?v=59tAVyGTtkU&list=PLEBfIPKooEoUqqmAtsSWcp1rewmXvP9np&index=13"><img src="img/coffee.svg" alt="スタバ"></a>
+            <a href="https://www.youtube.com/watch?v=59tAVyGTtkU&list=PLEBfIPKooEoUqqmAtsSWcp1rewmXvP9np&index=13" target="_blank"><img src="img/coffee.svg" alt="スタバ"></a>
           </div>
 
           <div class="news_sbox_text">
@@ -187,15 +180,9 @@
             <p>かまいたち山内・濱家のそれぞれが選ぶ好きなスターバックスーべスト５を発表！！</p>
           </div>
         </div>
-
-
     </div>
   </div>
-
-        <div class="btn morebtn">
-          <button  type="button" onclick="location.href='https://www.youtube.com/channel/UCIR2mQ77wHrLMreV45nYhgw'">かまいたちのYouTubeへ</button>
-
-        </div>
+ <button  type="button"  class="button" id="morebtn" onclick="location.href='https://www.youtube.com/channel/UCIR2mQ77wHrLMreV45nYhgw'" target="_blank">かまいたちのYouTubeへ</button>
 
         <div class="news_movie">
           <iframe width="560" height="315" src="https://www.youtube.com/embed/vR7uE9IAsuw?start=2216"
@@ -206,7 +193,6 @@
 
 
     </div>
-  </div>
 
   <section id="access" class="access">
     <div class="access_main maincontent">
@@ -257,26 +243,25 @@
 
   </section>
 
-  <section class="contact maincontent" id="contact" >
+  <section class="contact">
+    <div  class="maincontent" id="contact" >
+        <h2>お問い合わせ</h2>
+        <img class="mainimg" src="img/contast_main.svg" alt="シェフ">
 
-      <h2>お問い合わせ</h2>
-      <img class="mainimg" src="img/contast_main.svg" alt="シェフ">
+        <p>説明会お申し込み・お問い合わせ</p>
+        <br>
 
-      <p>説明会お申し込み・お問い合わせ</p>
+        <p id="contact_text1">ぜひ1度，足を運んでみませんか．説明会は随時開催中．</p>
+        <p id="contact_text2"></p>その他，お問い合わせもお気軽にどうぞ．お待ちしております．</p>
+        <br>
+        <p class="contact_2">※チーズアカデミーは実際には存在しません．間違っても問い合わせしないようお願いいたします．</p>
+    </div>
 
-      <p class="contact_1">ぜひ1度，足を運んでみませんか．説明会は随時開催中．
-        <br>その他，お問い合わせもお気軽にどうぞ．お待ちしております．
-      </p>
-      <p class="contact_2">※チーズアカデミーは実際には存在しません．間違っても問い合わせしないようお願いいたします．</p>
-      <p class>チーズを知るには……</p>
-      <a class="cheeseclub" href="https://www.meg-snow.com/cheeseclub/knowledge/">雪印メグミルクチーズクラブ</a>
-
-
-          <div class="contact_format">
-            <form action="">
-              <table class="contact-table">
-                <tr>
-                  <th class="contact-item"><span class="Form-Item-Label-Required">必須</span>おなまえ</th>
+    <div class="contact_format">
+      <form class="contact_format" action="">
+        <table class="contact-table">
+          <tr>
+            <th class="contact-item"><span class="Form-Item-Label-Required">必須</span>おなまえ</th>
                   <td class="contact-body">
                     <input type="text" name="名前" class="form-text" placeholder="やまだちいず">
                   </td>
@@ -292,11 +277,11 @@
                   <td class="contact-body">
                     <label class="my-radio my-radio_first">
                       <input type="radio"   name="性別" />
-                      <span class="radio-mark"></span>おとこの子
+                      <span class="radio-mark"></span>男の子
                     </label>
                     <label class="my-radio">
                       <input  type="radio"  name="性別" />
-                      <span class="radio-mark"></span>おんなの子
+                      <span class="radio-mark"></span>女の子
                     </label>
                     <label class="my-radio">
                       <input type="radio" name="性別" />
@@ -310,7 +295,6 @@
                     <input type="email" name="メール" class="form-text"  placeholder="cheeeeeeees@yahooo.jp">
                   </td>
                 </tr>
-
                 <tr>
                   <th class="contact-item"><span class="Form-Item-Label-Required">必須</span>ご年齢</th>
                   <td class="contact-body">
@@ -321,7 +305,7 @@
                       <option value="30代">30代</option>
                       <option value="40代">40代</option>
                       <option value="50代">50代</option>
-                      <option value="他年代">どれにもあてはまらない　</option>
+                      <option value="他年代">どれにもあてはまらない</option>
                     </select>
                   </td>
                 </tr>
@@ -352,22 +336,11 @@
                     <textarea name="問い合わせ" class="form-textarea"placeholder="ご記入ください"></textarea>
                   </td>
                 </tr>
-              </table>
+        </table>
 
-
-              <div class="form_btn">
-
-
-              <button type="submit" class="btn" id="form_btn"name="send" value="ボタン">送信する</button>
-              </div>
-
-            </form>
-          </div>
-
-
-
-
-
+        <button type="submit" class="button" id="formbtn"name="send" value="ボタン">送信する</button>
+      </form>
+    </div>
   </section>
 
 

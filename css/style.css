@@ -42,21 +42,41 @@ button {
   appearance: none;
 }
 
-button {
-  margin: 0;
-  padding: 16px 48px;
-  font-size: 16px;
-  font-family: fot-tsukuardgothic-std, sans-serif;
-  background-color: #ffffff;
-  color: #111111;
-  cursor: pointer;
-  border-radius: 10px;
-  border: 0;
-  transition: 0.3s;
+.button {
+  padding: 12px 24px;
+  margin: 64px;
+  border-radius: 6px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
 }
 
-button:hover {
-  background-color: #e0e0e0;
+.button:hover {
+  transform: translate3d(0px, -1px, 0px);
+}
+
+#morebtn {
+  background-color: #ffffff;
+  color: #111111;
+  box-shadow: 0 4px 6px #cccccc, 0 1px 3px #cccccc;
+}
+
+#morebtn:hover {
+  transform: translate3d(0px, -1px, 0px);
+  background-color: #ffffff;
+  box-shadow: 0 7px 14px #cccccc, 0 3px 6px #111111;
+}
+
+#formbtn {
+  background-color: #fff100;
+  color: #111111;
+  box-shadow: 0 4px 6px #cccccc, 0 1px 3px #cccccc;
+  margin: auto;
+  margin-top: 32px;
+}
+
+#formbtn:hover {
+  transform: translate3d(0px, -1px, 0px);
+  background-color: #fff100;
+  box-shadow: 0 7px 14px #cccccc, 0 3px 6px #111111;
 }
 
 h2 {
@@ -73,6 +93,7 @@ h3 {
 .maincontent .mainimg {
   width: 48px;
   height: 48px;
+  margin-bottom: 24px;
 }
 
 /* トップページの装飾 */
@@ -175,10 +196,16 @@ header::after {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding-bottom: 64px;
+  margin: 16px;
 }
 
-#about_text_7 {
-  margin-bottom: 64px;
+.about_text p {
+  padding: 8px;
+}
+
+.course {
+  padding: 32px 0;
 }
 
 .course_main {
@@ -206,10 +233,6 @@ header::after {
   background-size: contain;
 }
 
-.course_main {
-  margin: 128px;
-}
-
 .corse_detail {
   display: flex;
   justify-content: center;
@@ -229,7 +252,11 @@ header::after {
 }
 
 #course_1 {
-  margin: 0px;
+  margin-top: 96px;
+}
+
+#course_block_last {
+  margin: 96px;
 }
 
 .course_img {
@@ -264,14 +291,19 @@ header::after {
 /* ニュース */
 .news {
   position: relative;
-}
-
-.news_main {
-  margin: 64px 0px 64px 0px;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding-bottom: 64px;
+}
+
+.news_main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 32px;
 }
 
 .news_content {
@@ -285,6 +317,7 @@ header::after {
   max-width: 960px;
   justify-content: space-between;
   align-items: flex-start;
+  margin-top: 64px;
 }
 
 .news_lbox img {
@@ -350,7 +383,7 @@ header::after {
 }
 
 .access_main {
-  margin: 64px;
+  margin: 32px;
   display: grid;
   place-items: center;
 }
@@ -380,6 +413,46 @@ header::after {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  position: relative;
+  background-color: #ffffff;
+  padding: 32px 0 0 0;
+}
+
+.contact::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 50px;
+  background-image: url(../img/circle01.svg);
+  background-size: contain;
+  position: absolute;
+  top: -25px;
+}
+
+.contact::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 50px;
+  background-image: url(../img/circle01.svg);
+  bottom: -25px;
+  position: absolute;
+  background-size: contain;
+}
+
+.maincontent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.contact_format {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 48px;
 }
 
 .access_content table {
@@ -388,7 +461,7 @@ header::after {
   border-radius: 5px;
   border-spacing: 0;
   width: 100%;
-  margin: 64px 0px 80px 0px;
+  margin: 24px 0px 80px 0px;
   text-align: center;
 }
 
@@ -424,39 +497,11 @@ caption {
   /* 文字色 */
   font-weight: bold;
   /* 太字に */
-  margin: 32px;
+  font-size: 24px;
+  margin: 24px;
 }
 
 /* お問い合わせ */
-.contact {
-  padding: 80px 0;
-  position: relative;
-  background-color: #ffffff;
-}
-
-.contact:before {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 50px;
-  background-image: url(../img/circle01.svg);
-  background-size: contain;
-  position: absolute;
-  top: -25px;
-}
-
-.contact::after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 50px;
-  background-image: url(../img/circle01.svg);
-  bottom: -25px;
-  position: absolute;
-  /* 画像を切り取ったり縦横比を崩したりすることなく、画像ができるだけ大きくなるよう拡大縮小 */
-  background-size: contain;
-}
-
 .contact-ttl {
   font-size: 40px;
   font-weight: bold;
@@ -551,7 +596,7 @@ caption {
 /* 常に表示する円 */
 .radio-mark {
   position: absolute;
-  top: 0;
+  top: 1.8px;
   /* 上からの位置 */
   left: 0;
   height: 22px;
@@ -643,7 +688,9 @@ caption {
 }
 
 .contact-skill-txt-txt {
-  margin-left: 40px;
+  margin-left: 24px;
+  position: relative;
+  top: -5px;
 }
 
 .contact_format input:invalid {
@@ -651,21 +698,6 @@ caption {
 }
 
 /* 送信ボタン */
-.contact_format button {
-  background-color: #fff100;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 100px;
-}
-
-.form_btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 100px;
-}
-
 /* スライダー */
 /* 1.親スタイルリセットとペース設定 ++++++++++ */
 .slider-box {
@@ -760,15 +792,17 @@ caption {
 }
 
 .footer {
-  width: 100%;
-  height: 120px;
-  text-align: center;
-  margin: 128px;
+  margin: 96px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .footer-text {
   color: #111111;
   display: grid;
   place-items: center;
+  margin-top: 64px;
 }
 /*# sourceMappingURL=style.css.map */
