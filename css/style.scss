@@ -152,8 +152,19 @@ header {
   place-items: center;
   position: relative;
   background: $color_white;
-  height: $size_10;
   margin-bottom: 17px;
+  img {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+.kokku {
+  border: 0;
+  height: 50px;
+  background-image: url(../img/コックアイコン.svg);
+  margin: 20px 0px 20px 0px;
+  background-repeat: space;
 }
 
 .header_text {
@@ -294,7 +305,7 @@ header::after {
   img {
     width: $size_9;
     height: $size_9;
-    margin-right: $size_9;
+    margin-right: $size_8;
   }
 }
 
@@ -746,111 +757,6 @@ caption {
 
 /* 送信ボタン */
 
-/* スライダー */
-
-/* 1.親スタイルリセットとペース設定 ++++++++++ */
-.slider-box {
-  margin: $size_10;
-  max-height: $size_max;
-  max-height: $size_max;
-}
-
-.slider-box div {
-  box-sizing: border-box;
-  margin: $size_2;
-}
-
-.loop-box {
-  ul,
-  li {
-    box-sizing: border-box;
-    margin: $size_2;
-  }
-}
-
-/* 2.ベースBOX */
-
-.slider-box {
-  box-sizing: border-box;
-  width: 80%;
-  display: grid;
-  place-items: center;
-  margin: 0 auto;
-  padding: $size_1;
-}
-
-/* 4.スライダー本体とアニメーション*/
-
-.loop-box {
-  position: relative;
-  width: 100%;
-
-  height: 320px;
-
-  ul {
-    height: 320px;
-    position: absolute;
-    left: 0;
-    top: 0;
-    display: flex;
-    justify-content: space-between;
-    list-style: none;
-    max-width: 10000%;
-    min-width: 100%;
-    width: calc(320px * 3);
-    animation: 30s linear infinite;
-  }
-
-  li {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: $color_white;
-    width: calc(100% / 3);
-  }
-
-  img {
-    height: auto;
-    width: 100%;
-  }
-
-  ul {
-    &.loop1 {
-      animation-name: loop1;
-    }
-
-    &.loop2 {
-      animation-name: loop2;
-    }
-  }
-}
-
-/* 5.アニメーション個別 */
-
-@keyframes loop1 {
-  0% {
-    transform: translateX(0);
-  }
-
-  49.99999% {
-    transform: translateX(-100%);
-  }
-
-  50% {
-    transform: translateX(100%);
-  }
-}
-
-@keyframes loop2 {
-  0% {
-    transform: translateX(100%);
-  }
-
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
 // フッター
 .footer {
   margin: $size_7;
@@ -865,4 +771,69 @@ caption {
   display: grid;
   place-items: center;
   margin-top: $size_6;
+}
+
+// スライダー
+
+.slide {
+  background-color: $color_white;
+  width: 512px;
+  height: 512px;
+  display: flex;
+  margin: auto;
+  margin-bottom: $size_5;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.swiper-slide {
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+/* 全体のスタイル */
+.swiper-wrapper {
+  width: 100%;
+  height: 250px;
+}
+/* 全スライド共通スタイル */
+.swiper-slide {
+  color: #ffffff;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  line-height: 250px;
+}
+/* 4の倍数＋1枚目のスライドのスタイル（1枚目、5枚目…） */
+.swiper-slide:nth-child(4n + 1) {
+  background-color: #fdff83;
+}
+/* 4の倍数＋2枚目のスライドのスタイル（2枚目、6枚目…） */
+.swiper-slide:nth-child(4n + 2) {
+  background-color: #ff9195;
+}
+/* 4の倍数＋3枚目のスライドのスタイル（3枚目、7枚目…） */
+.swiper-slide:nth-child(4n + 3) {
+  background-color: #a79eff;
+}
+/* 4の倍数＋4枚目のスライドのスタイル（4枚目、8枚目…） */
+.swiper-slide:nth-child(4n + 4) {
+  background-color: #e2ffe0;
 }

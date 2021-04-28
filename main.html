@@ -10,6 +10,9 @@
   <link rel="icon" type="image/x-icon" href="img/icon.svg">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
 
+  <!-- suraidai -->
+
+<link rel="stylesheet" href="css/swiper.css">
   <!-- adobefont -->
   <script>
     (function (d) {
@@ -20,7 +23,9 @@
       },
         h = d.documentElement, t = setTimeout(function () { h.className = h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive"; }, config.scriptTimeout), tk = d.createElement("script"), f = false, s = d.getElementsByTagName("script")[0], a; h.className += " wf-loading"; tk.src = 'https://use.typekit.net/' + config.kitId + '.js'; tk.async = true; tk.onload = tk.onreadystatechange = function () { a = this.readyState; if (f || a && a != "complete" && a != "loaded") return; f = true; clearTimeout(t); try { Typekit.load(config) } catch (e) { } }; s.parentNode.insertBefore(tk, s)
     })(document);
+
   </script>
+
 </head>
 
 <body>
@@ -29,6 +34,8 @@
 
   <header>
     <div class="wrap">
+<hr class="kokku" />
+
     <div class="header_text">
     <h1>セカイを変えるチーズを作ろう</h1>
     <p>チーズ職人養成学校「チーズアカデミーFUKUOKA」</p>
@@ -80,12 +87,12 @@
   <div class="about_text" id="about_text">
 
 
-      <p id="about_text_2">チーズアカデミーはチーズ職人養成学校です</p>
+      <p id="about_text_2">チーズアカデミーは<strong>チーズ職人 </strong>養成学校です</p>
       <p id="about_text_3">チーズの素晴らしさを，自給自足を通じて，できるだけ多くの人に知っていただきたい</p>
       <p id="about_text_4">そして，食卓にはいつもチーズがあった，あの頃の当たり前をこの手で取り戻したい</p>
       <p id="about_text_5">そんな思いから，チーズ職人養成学校「チーズアカデミーFUKUOKA」は歩みを始めています</p>
-      <p id="about_text_6">卒業後、チーズ自給自足のバックアップはもちろんのこと</p>
-      <p id="about_text_7">チーズ職人への就職・転職もサポートします</p>
+      <p id="about_text_6">卒業後、<strong>チーズ自給自足のバックアップ</strong>はもちろんのこと</p>
+      <p id="about_text_7">チーズ職人への<strong>就職・転職</strong>もサポートします</p>
   </div>
 </section>
 
@@ -341,7 +348,31 @@
         <button type="submit" class="button" id="formbtn"name="send" value="ボタン">送信する</button>
       </form>
     </div>
+  <!-- スライド -->
+
+  <!-- Swiper -->
+  <div class="slide">
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="img/スライダー_1.svg" alt=""></div>
+        <div class="swiper-slide"><img src="img/スライダー_2.svg" alt=""></div>
+        <div class="swiper-slide"><img src="img/スライダー_3.svg" alt=""></div>
+        <div class="swiper-slide"><img src="img/スライダー_4.svg" alt=""></div>
+        <div class="swiper-slide"><img src="img/スライダー_5.svg" alt=""></div>
+        <div class="swiper-slide"><img src="img/スライダー_6.svg" alt=""></div>
+        <div class="swiper-slide"><img src="img/スライダー_7.svg" alt=""></div>
+        <div class="swiper-slide"><img src="img/スライダー_8.svg" alt=""></div>
+
+
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+  </div>
+
   </section>
+
+
 
 
 
@@ -351,26 +382,11 @@
     <p>copyrights 2016-2018 Cheeese Academy Fukuoka All RIghts Reserved.</p>
   </footer>
 
-  <!-- スライダー -->
-
-  <div class="slider-box">
-    <div class="loop-box">
-      <ul class="loop1">
-        <li><img src="img/チーズ01.svg" alt=""></li>
-        <li><img src="img/チーズ02.svg" alt=""></li>
-        <li><img src="img/チーズ03.svg" alt=""></li>
-      </ul>
-      <ul class="loop2">
-        <li><img src="img/チーズ04.svg" alt=""></li>
-        <li><img src="img/チーズ05.svg" alt=""></li>
-        <li><img src="img/チーズ06.svg" alt=""></li>
-      </ul>
-    </div>
-    <div><label for="slider-check" class="slider-label"></label></div>
-  </div>
 
 
-  <!-- トップに戻る -->
+
+<script src="swiper.js"></script>
+
 
 </body>
 

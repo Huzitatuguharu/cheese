@@ -102,8 +102,20 @@ header {
   place-items: center;
   position: relative;
   background: #ffffff;
-  height: 256px;
   margin-bottom: 17px;
+}
+
+header img {
+  width: 50px;
+  height: 50px;
+}
+
+.kokku {
+  border: 0;
+  height: 50px;
+  background-image: url(../img/コックアイコン.svg);
+  margin: 20px 0px 20px 0px;
+  background-repeat: space;
 }
 
 .header_text {
@@ -243,7 +255,7 @@ header::after {
 .corse_detail img {
   width: 192px;
   height: 192px;
-  margin-right: 192px;
+  margin-right: 128px;
 }
 
 .course_block {
@@ -698,99 +710,6 @@ caption {
 }
 
 /* 送信ボタン */
-/* スライダー */
-/* 1.親スタイルリセットとペース設定 ++++++++++ */
-.slider-box {
-  margin: 256px;
-  max-height: 960px;
-  max-height: 960px;
-}
-
-.slider-box div {
-  box-sizing: border-box;
-  margin: 16px;
-}
-
-.loop-box ul,
-.loop-box li {
-  box-sizing: border-box;
-  margin: 16px;
-}
-
-/* 2.ベースBOX */
-.slider-box {
-  box-sizing: border-box;
-  width: 80%;
-  display: grid;
-  place-items: center;
-  margin: 0 auto;
-  padding: 8px;
-}
-
-/* 4.スライダー本体とアニメーション*/
-.loop-box {
-  position: relative;
-  width: 100%;
-  height: 320px;
-}
-
-.loop-box ul {
-  height: 320px;
-  position: absolute;
-  left: 0;
-  top: 0;
-  display: flex;
-  justify-content: space-between;
-  list-style: none;
-  max-width: 10000%;
-  min-width: 100%;
-  width: calc(320px * 3);
-  animation: 30s linear infinite;
-}
-
-.loop-box li {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #ffffff;
-  width: calc(100% / 3);
-}
-
-.loop-box img {
-  height: auto;
-  width: 100%;
-}
-
-.loop-box ul.loop1 {
-  animation-name: loop1;
-}
-
-.loop-box ul.loop2 {
-  animation-name: loop2;
-}
-
-/* 5.アニメーション個別 */
-@keyframes loop1 {
-  0% {
-    transform: translateX(0);
-  }
-  49.99999% {
-    transform: translateX(-100%);
-  }
-  50% {
-    transform: translateX(100%);
-  }
-}
-
-@keyframes loop2 {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
 .footer {
   margin: 96px;
   display: flex;
@@ -804,5 +723,65 @@ caption {
   display: grid;
   place-items: center;
   margin-top: 64px;
+}
+
+.slide {
+  background-color: #ffffff;
+  width: 512px;
+  height: 512px;
+  display: flex;
+  margin: auto;
+  margin-bottom: 48px;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.swiper-slide {
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 全体のスタイル */
+.swiper-wrapper {
+  width: 100%;
+  height: 250px;
+}
+
+/* 全スライド共通スタイル */
+.swiper-slide {
+  color: #ffffff;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  line-height: 250px;
+}
+
+/* 4の倍数＋1枚目のスライドのスタイル（1枚目、5枚目…） */
+.swiper-slide:nth-child(4n + 1) {
+  background-color: #fdff83;
+}
+
+/* 4の倍数＋2枚目のスライドのスタイル（2枚目、6枚目…） */
+.swiper-slide:nth-child(4n + 2) {
+  background-color: #ff9195;
+}
+
+/* 4の倍数＋3枚目のスライドのスタイル（3枚目、7枚目…） */
+.swiper-slide:nth-child(4n + 3) {
+  background-color: #a79eff;
+}
+
+/* 4の倍数＋4枚目のスライドのスタイル（4枚目、8枚目…） */
+.swiper-slide:nth-child(4n + 4) {
+  background-color: #e2ffe0;
 }
 /*# sourceMappingURL=style.css.map */
