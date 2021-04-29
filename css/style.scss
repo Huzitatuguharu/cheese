@@ -152,7 +152,7 @@ header {
   place-items: center;
   position: relative;
   background: $color_white;
-  margin-bottom: 17px;
+  margin-bottom: $size_6;
   img {
     width: 50px;
     height: 50px;
@@ -197,6 +197,9 @@ header::after {
   }
 }
 
+.menu {
+  margin-bottom: $size_2;
+}
 .nav_text {
   display: flex;
 }
@@ -784,6 +787,9 @@ caption {
   margin-bottom: $size_5;
   justify-content: center;
   align-items: center;
+  p {
+    margin: $size_2;
+  }
 }
 
 .swiper-container {
@@ -835,5 +841,56 @@ caption {
 }
 /* 4の倍数＋4枚目のスライドのスタイル（4枚目、8枚目…） */
 .swiper-slide:nth-child(4n + 4) {
-  background-color: #e2ffe0;
+  background-color: #fff;
+}
+
+// topへ
+/*--------------------------------
+  scroll animation fadein
+--------------------------------*/
+.js-scroll-fadein {
+  margin: $size_4;
+  transition: opacity 1s;
+  visibility: hidden;
+  opacity: 0;
+  &.is-fadein {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+/*--------------------------------
+  arrow
+--------------------------------*/
+.arrow {
+  position: fixed;
+  right: 12px;
+  bottom: 12px;
+  color: $color_black;
+  cursor: pointer;
+  background-color: $color_black;
+  border-radius: 22px;
+  padding: 20px;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    opacity: 0.8;
+    bottom: 15px;
+    box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.5);
+  }
+  &:before,
+  &:after {
+    content: "";
+    width: 12px;
+    height: 12px;
+    border-top: solid 3px #fff;
+    border-right: solid 3px #fff;
+    transform: rotate(-45deg);
+    position: absolute;
+    left: 14px;
+  }
+  &:before {
+    top: 11px;
+  }
+  &:after {
+    top: 21px;
+  }
 }
