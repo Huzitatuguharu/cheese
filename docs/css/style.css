@@ -1,0 +1,850 @@
+@charset "UTF-8";
+/*全体共通
+最初から設定してあるので特に変更
+しなくても大丈夫です♪
+-----------------*/
+/*　パディングをサイズ内側にする処理　*/
+* {
+  padding: 0;
+  margin: 0;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/*ーーーーーーーーーーー*/
+/*この下から記述*/
+/*ーーーーーーーーーーー*/
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: fot-tsukuardgothic-std, sans-serif;
+  line-height: 1.75;
+  font-size: 16px;
+  background: #fff100;
+  color: #111111;
+}
+
+input,
+select,
+textarea,
+button {
+  font-size: 100%;
+  font-family: inherit;
+}
+
+button {
+  background: none;
+  border: none;
+  outline: none;
+  appearance: none;
+}
+
+.button {
+  padding: 12px 24px;
+  margin: 64px;
+  border-radius: 6px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+}
+
+.button:hover {
+  transform: translate3d(0px, -1px, 0px);
+}
+
+#morebtn {
+  background-color: #ffffff;
+  color: #111111;
+  box-shadow: 0 4px 6px #cccccc, 0 1px 3px #cccccc;
+}
+
+#morebtn:hover {
+  transform: translate3d(0px, -1px, 0px);
+  background-color: #ffffff;
+  box-shadow: 0 7px 14px #cccccc, 0 3px 6px #111111;
+}
+
+#formbtn {
+  background-color: #fff100;
+  color: #111111;
+  box-shadow: 0 4px 6px #cccccc, 0 1px 3px #cccccc;
+  margin: auto;
+  margin-top: 32px;
+}
+
+#formbtn:hover {
+  transform: translate3d(0px, -1px, 0px);
+  background-color: #fff100;
+  box-shadow: 0 7px 14px #cccccc, 0 3px 6px #111111;
+}
+
+h2 {
+  font-size: 32px;
+  margin: 32px;
+}
+
+h3 {
+  font-size: 24px;
+  text-decoration: underline wavy #fff100;
+  text-underline-offset: 8px;
+}
+
+.maincontent .mainimg {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 24px;
+}
+
+/* トップページの装飾 */
+header {
+  display: grid;
+  place-items: center;
+  position: relative;
+  background: #ffffff;
+  margin-bottom: 64px;
+}
+
+header img {
+  width: 50px;
+  height: 50px;
+}
+
+.kokku {
+  border: 0;
+  height: 50px;
+  background-image: url(../img/コックアイコン.svg);
+  margin: 20px 0px 20px 0px;
+  background-repeat: space;
+}
+
+.header_text {
+  display: grid;
+  place-items: center;
+}
+
+header::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 50px;
+  background-image: url(../img/circle01.svg);
+  bottom: -25px;
+  position: absolute;
+  /* 画像を切り取ったり縦横比を崩したりすることなく、画像ができるだけ大きくなるよう拡大縮小 */
+  background-size: contain;
+}
+
+/* navの装飾 */
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 96px;
+}
+
+.wrapper img {
+  width: 30%;
+}
+
+.menu {
+  margin-bottom: 16px;
+}
+
+.nav_text {
+  display: flex;
+}
+
+.nav1:hover,
+.nav2:hover,
+.nav3:hover,
+.nav4:hover,
+.nav5:hover {
+  box-shadow: 0 3px 6px 0 #111111;
+  transform: translateY(-0.1875em);
+}
+
+.nav li {
+  width: 128px;
+  text-align: center;
+  height: 50px;
+  line-height: 50px;
+  margin-right: 2px;
+  list-style: none;
+  border-radius: 10px;
+}
+
+.nav li a {
+  text-decoration: none;
+  color: #111111;
+  font-weight: bold;
+  padding: 16px;
+  text-decoration: none;
+}
+
+/* あばうと */
+.about {
+  position: relative;
+  margin-bottom: 17px;
+  position: relative;
+}
+
+.about::after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 50px;
+  background-image: url(../img/circle01.svg);
+  bottom: -40px;
+  background-size: contain;
+}
+
+.about_main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.about_text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 64px;
+  margin: 16px;
+}
+
+.about_text p {
+  padding: 8px;
+}
+
+.course {
+  padding: 32px 0;
+}
+
+.course_main {
+  display: grid;
+  place-items: center;
+}
+
+#course {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #ffffff;
+}
+
+#course::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 50px;
+  background-image: url(../img/circle03.svg);
+  bottom: -25px;
+  position: absolute;
+  background-size: contain;
+}
+
+.corse_detail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.corse_detail img {
+  width: 192px;
+  height: 192px;
+  margin-right: 128px;
+}
+
+.course_block {
+  display: flex;
+  margin: 96px 0px 0px 0px;
+}
+
+#course_1 {
+  margin-top: 96px;
+}
+
+#course_block_last {
+  margin: 96px;
+}
+
+.course_img {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 50%;
+}
+
+.course_1_text,
+.course_2_text,
+.course_3_text {
+  width: 50%;
+  max-width: 480px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.course_1_text p,
+.course_2_text p,
+.course_3_text p {
+  margin: 40px 48px 0px 48px;
+}
+
+.course_1_text h3,
+.course_2_text h3,
+.course_3_text h3 {
+  margin-left: 48px;
+}
+
+/* ニュース */
+.news {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 64px;
+}
+
+.news_main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 32px;
+}
+
+.news_content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.news_lbox {
+  display: flex;
+  max-width: 960px;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 64px;
+}
+
+.news_lbox img {
+  width: 128px;
+  height: 128px;
+}
+
+.news_sbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 25%;
+}
+
+.news_sbox h3 {
+  margin: 32px;
+}
+
+.news_sbox_text,
+.news_sbox_img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 24px;
+}
+
+.news_sbox_img:hover {
+  filter: drop-shadow(2px 2px 15px #cccccc);
+}
+
+.news_movie {
+  margin: 128px;
+}
+
+.news_movie,
+.morebtn {
+  margin: 56px 0px 48px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.access {
+  position: relative;
+  background-color: #cccccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.access::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 50px;
+  background-image: url(../img/circle02.svg);
+  background-size: contain;
+  position: absolute;
+  top: -25px;
+}
+
+.access_main {
+  margin: 32px;
+  display: grid;
+  place-items: center;
+}
+
+.access_map {
+  position: relative;
+  width: 50%;
+}
+
+.access_map:before {
+  content: "";
+  display: block;
+  padding-top: 56.25%;
+}
+
+#content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* 会社概要 */
+.contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  background-color: #ffffff;
+  padding: 32px 0 0 0;
+}
+
+.contact::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 50px;
+  background-image: url(../img/circle01.svg);
+  background-size: contain;
+  position: absolute;
+  top: -25px;
+}
+
+.contact::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 50px;
+  background-image: url(../img/circle01.svg);
+  bottom: -25px;
+  position: absolute;
+  background-size: contain;
+}
+
+.maincontent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.contact_format {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 48px;
+}
+
+.access_content table {
+  border: 1px solid #ccc;
+  border-collapse: separate;
+  border-radius: 5px;
+  border-spacing: 0;
+  width: 100%;
+  margin: 24px 0px 80px 0px;
+  text-align: center;
+}
+
+.access_content table th,
+.access_content table td {
+  border-bottom: 1px solid #ccc;
+  padding: 10px 20px;
+  background: #ffffff;
+}
+
+.access_content table tr:first-child th {
+  border-radius: 5px 0 0 0;
+}
+
+.access_content table tr:first-child td {
+  border-radius: 0 5px 0 0;
+}
+
+.access_content table tr:last-child th {
+  border-bottom: none;
+  border-radius: 0 0 0 5px;
+}
+
+.access_content table tr:last-child td {
+  border-bottom: none;
+  border-radius: 0 0 5px 0;
+}
+
+caption {
+  border-collapse: separate;
+  border-radius: 5px;
+  color: #111111;
+  /* 文字色 */
+  font-weight: bold;
+  /* 太字に */
+  font-size: 24px;
+  margin: 24px;
+}
+
+/* お問い合わせ */
+.contact-ttl {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.contact-body {
+  padding: 12px 0px 12px 120px;
+}
+
+.contact-item {
+  text-align: left;
+  padding-left: 20px;
+}
+
+.form-text,
+.form-select {
+  width: 328px;
+  height: 36px;
+  padding: 0px 8px;
+  border-radius: 5px;
+  border: 1px solid #cccccc;
+}
+
+.contact-sex + .contact-sex {
+  margin-left: 20px;
+}
+
+.contact-sex-txt {
+  display: inline-block;
+  margin-left: 5px;
+}
+
+.contact-skill {
+  display: block;
+}
+
+.contact-skill + .contact-skill {
+  margin-top: 24px;
+}
+
+.form-textarea {
+  width: 328px;
+  height: 108px;
+  padding: 8px;
+  height: 200px;
+  border-radius: 5px;
+  border: 1px solid #cccccc;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.Form-Item-Label-Required {
+  border-radius: 6px;
+  margin-right: 16px;
+  padding: 1px 17px;
+  width: 70px;
+  display: inline-block;
+  text-align: center;
+  background: #ff1943;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.Form-Item-Label-like {
+  border-radius: 6px;
+  margin-right: 16px;
+  padding: 1px 17px;
+  width: 70px;
+  display: inline-block;
+  text-align: center;
+  background: #403d00;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.my-radio {
+  position: relative;
+  padding-left: 28px;
+  cursor: pointer;
+  user-select: none;
+  margin-left: 16px;
+  /* inputは非表示にする */
+}
+
+.my-radio input {
+  display: none;
+}
+
+/* 常に表示する円 */
+.radio-mark {
+  position: absolute;
+  top: 1.8px;
+  /* 上からの位置 */
+  left: 0;
+  height: 22px;
+  /* 幅 */
+  width: 22px;
+  /* 幅 */
+  border: solid 2px #d4dae2;
+  /* 線 */
+  border-radius: 50%;
+  box-sizing: border-box;
+  /* 選択時に重ねる円 */
+}
+
+.radio-mark:after {
+  content: "";
+  position: absolute;
+  background: #ff1943;
+  /* 色 */
+  border-radius: 50%;
+  top: 2px;
+  bottom: 2px;
+  left: 2px;
+  right: 2px;
+  opacity: 0;
+  /* 透明にしておく */
+}
+
+/* 選択されたとき */
+.my-radio {
+  /* 上の円 */
+}
+
+.my-radio input:checked + .radio-mark:after {
+  opacity: 1;
+  /* 透明を解除 */
+}
+
+.my-radio_first {
+  margin-left: 0px;
+}
+
+/*チェックボックスかざり  */
+.contact-skill {
+  display: block;
+  position: relative;
+  margin: 1em 0;
+  padding-left: 28px;
+  cursor: pointer;
+  user-select: none;
+  /* テキストの選択を防ぐ */
+}
+
+.contact-skill input {
+  display: none;
+}
+
+.contact-skill-txt {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 24px;
+  width: 24px;
+  border: solid 2px #d4dae2;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.contact-skill-txt:after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 1px;
+  width: 6px;
+  height: 8px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  opacity: 0;
+  /* 透明にしておく */
+  margin-right: 40px;
+}
+
+.contact-skill input:checked + .contact-skill-txt {
+  background: #ff1943;
+}
+
+.contact-skill input:checked + .contact-skill-txt:after {
+  opacity: 1;
+}
+
+.contact-skill-txt-txt {
+  margin-left: 24px;
+  position: relative;
+  top: -5px;
+}
+
+.contact_format input:invalid {
+  border: solid 1px #ff1943;
+}
+
+/* 送信ボタン */
+.footer {
+  margin: 96px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.footer-text {
+  color: #111111;
+  display: grid;
+  place-items: center;
+  margin-top: 64px;
+}
+
+.slide {
+  background-color: #ffffff;
+  width: 512px;
+  height: 512px;
+  display: flex;
+  margin: auto;
+  margin-bottom: 48px;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide p {
+  margin: 16px;
+}
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.swiper-slide {
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 全体のスタイル */
+.swiper-wrapper {
+  width: 100%;
+  height: 250px;
+}
+
+/* 全スライド共通スタイル */
+.swiper-slide {
+  color: #ffffff;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  line-height: 250px;
+}
+
+/* 4の倍数＋1枚目のスライドのスタイル（1枚目、5枚目…） */
+.swiper-slide:nth-child(4n + 1) {
+  background-color: #fdff83;
+}
+
+/* 4の倍数＋2枚目のスライドのスタイル（2枚目、6枚目…） */
+.swiper-slide:nth-child(4n + 2) {
+  background-color: #ff9195;
+}
+
+/* 4の倍数＋3枚目のスライドのスタイル（3枚目、7枚目…） */
+.swiper-slide:nth-child(4n + 3) {
+  background-color: #a79eff;
+}
+
+/* 4の倍数＋4枚目のスライドのスタイル（4枚目、8枚目…） */
+.swiper-slide:nth-child(4n + 4) {
+  background-color: #fff;
+}
+
+/*--------------------------------
+  scroll animation fadein
+--------------------------------*/
+.js-scroll-fadein {
+  margin: 32px;
+  transition: opacity 1s;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.js-scroll-fadein.is-fadein {
+  visibility: visible;
+  opacity: 1;
+}
+
+/*--------------------------------
+  arrow
+--------------------------------*/
+.arrow {
+  position: fixed;
+  right: 12px;
+  bottom: 12px;
+  color: #111111;
+  cursor: pointer;
+  background-color: #111111;
+  border-radius: 22px;
+  padding: 20px;
+  transition: all 0.2s ease-in-out;
+}
+
+.arrow:hover {
+  opacity: 0.8;
+  bottom: 15px;
+  box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.5);
+}
+
+.arrow:before, .arrow:after {
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-top: solid 3px #fff;
+  border-right: solid 3px #fff;
+  transform: rotate(-45deg);
+  position: absolute;
+  left: 14px;
+}
+
+.arrow:before {
+  top: 11px;
+}
+
+.arrow:after {
+  top: 21px;
+}
+/*# sourceMappingURL=style.css.map */
